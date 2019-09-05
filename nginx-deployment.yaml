@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-deployment
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   fanname: nginx
+ template:
+  metadata:
+   labels:
+    fanname: nginx
+  spec:
+   containers:
+    - name: nginx
+      image: fanzoudocker/nginx
+      ports:
+      - containerPort: 80
