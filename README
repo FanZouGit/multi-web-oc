@@ -1,0 +1,6 @@
+#enable run container as root
+oc login -u system:admin 
+or
+oc login -u admuser
+Then:
+oc adm policy add-scc-to-user anyuid -z default
